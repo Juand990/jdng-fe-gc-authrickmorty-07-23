@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angauthrickmorty": {
+      "hosting": {
+        "jdng-fe-gc-crudrickymorty-07-23": [
+          "angauthrickmorty"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angauthrickmorty"
+  }
+}

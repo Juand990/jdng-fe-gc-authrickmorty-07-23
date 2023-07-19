@@ -1,0 +1,12 @@
+.char{
+    border: 1px solid black;
+    width: 300px;
+    text-align: center;   
+}
+img{
+    width: 100%;
+}
+button{
+    margin-bottom: 10px;
+    width: 100%;
+}

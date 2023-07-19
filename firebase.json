@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "jdng-fe-gc-crudrickymorty-07-23",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

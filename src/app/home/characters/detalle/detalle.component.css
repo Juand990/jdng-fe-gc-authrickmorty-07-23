@@ -1,0 +1,19 @@
+.char{
+    border: 1px solid black;
+    width: 300px;
+    text-align: center;   
+}
+img{
+    width: 100%;
+}
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 500px;
+}
+
+tr,th,td{    
+    border: 1px solid black;
+    width: 100px;
+    padding: 0px 20px 0px 20px;
+}

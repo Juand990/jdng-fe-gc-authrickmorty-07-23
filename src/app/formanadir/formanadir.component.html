@@ -1,0 +1,73 @@
+<div class="container text-center">
+    <div class="row">
+        <div class="col-6">
+            <h3>Añadir nuevos Characters.</h3>
+            <div class="mb-3">
+                <label class="form-label" *ngIf="contAnadidos()"></label>
+                <label class="form-label">ID</label>
+                <input type="number" [(ngModel)]='characters.id' class="form-control" value="">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" [(ngModel)]='characters.name' class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Status</label>
+                <input type="text" [(ngModel)]='characters.status' class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Species</label>
+                <input type="text" [(ngModel)]='characters.species' class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Gender</label>
+                <select class="form-select" [(ngModel)]='characters.gender'>
+                    <option value="?" disabled selected="selected">Elige una</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Origen</label>
+                <input type="text" [(ngModel)]='characters.origin' class="form-control">
+            </div>
+            <span *ngIf="existe(characters.id);else anadirA">
+                Añadir: ID existente o no valido.
+            </span>
+            <ng-template #anadirA>
+                <span *ngIf="noVacio();else anadirB">
+                    Los campos no pueden estar vacios para añadir.                    
+                </span>
+                <ng-template #anadirB>
+                    <button (click)="anadir()" routerLink="/characters" class="btn btn-primary">Añadir</button>
+                </ng-template>
+            </ng-template>
+            <div class="mb-3">
+                <span *ngIf="characters.id<=0;else modificar">
+                    Este ID no se puede modificar.
+                </span>
+                <ng-template #modificar>
+                    <span *ngIf="existe(characters.id)">
+                        <span class="eliminar">
+                            Este ID se puede modificar.<br>
+                        </span>
+                        <button (click)="editar(characters.id)" routerLink="/characters"
+                            class="btn btn-primary">Modificar</button>
+                    </span>
+                </ng-template>
+            </div>
+            <div class="mb-3">
+                <span *ngIf="characters.id<=0;else borrarB">
+                    Este ID no se puede eliminar.
+                </span>
+                <ng-template #borrarB>
+                    <span class="eliminar" *ngIf="existe(characters.id)">
+                        Solo ID para eliminar. <br>
+                        <button (click)="eliminar(characters.id)" routerLink="/characters"
+                            class="btn btn-primary">Eliminar</button>
+                    </span>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

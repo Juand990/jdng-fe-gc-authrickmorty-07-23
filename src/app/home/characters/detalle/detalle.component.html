@@ -1,0 +1,30 @@
+<div class="container">   
+    <div class="row">
+        <div class="col-sm-4 ms-0 mt-3 mx-2 " >
+            <div class="char">
+                <img src="{{data.image}}">  
+            </div>
+            <div>                          
+                <table class="table table-primary">
+                    <tr class="table-primary">
+                        <th>Nombre</th>
+                        <th>Estado</th>
+                        <th>Especie</th>
+                        <th>Genero</th>
+                        <th>Origen</th>
+                    </tr>
+                    <tr class="table-primary">
+                        <td class="table-primary">{{data.name}}</td>
+                        <td class="table-primary">{{data.status}}</td>
+                        <td class="table-primary">{{data.species}}</td>
+                        <td class="table-primary">{{data.gender}}</td>
+                        <td class="table-primary">{{data.origin}}</td>
+                    </tr>
+                </table>                                       
+            </div>
+            <button  routerLink="/characters" class="btn btn-success" type="button">
+                Volver                    
+            </button>
+        </div>
+    </div>
+</div>

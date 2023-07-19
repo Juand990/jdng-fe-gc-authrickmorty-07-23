@@ -1,0 +1,33 @@
+<div class="container">   
+    <div class="row">
+        <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">Filtro</label>
+                <input type="text" [(ngModel)]='filtro' class="form-control"> 
+                <button (click)="filtrar(filtro)" class="btn btn-primary">Filtrar</button>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="charFiltrados=='';else filtrados">        
+        <div class="col-sm-4 ms-0 mt-3 mx-2 char" *ngFor="let char of characters">
+            <div>
+                <img src="{{char.image}}">
+                <p>{{char.name}}</p>
+                <button (click)="detalle(char.id)" routerLink="/detalle" class="btn btn-primary" type="button">
+                    Detalle                    
+                </button>                
+            </div>
+        </div>        
+    </div>
+    <ng-template #filtrados>
+        <div class="col-sm-4 ms-0 mt-3 mx-2 char" *ngFor="let char of charFiltrados">
+            <div>
+                <img src="{{char.image}}">
+                <p>{{char.name}}</p>
+                <button (click)="detalle(char.id)" routerLink="/detalle" class="btn btn-primary" type="button">
+                    Detalle                    
+                </button>                
+            </div>
+        </div>
+    </ng-template>
+</div>
